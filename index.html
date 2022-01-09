@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>Game</title>
+<script>
+function five()
+{
+document.getElementById("p1").style.color="red";
+}
+
+function six()
+{
+document.getElementById("p1").style.color="yellow";
+}
+ function rock()
+{
+  document.getElementById("us").src="rock.png"
+  var a = Math.floor(Math.random()*3);
+
+  if(a == 0)
+  {
+    document.getElementById("op").src="rock.png";
+    document.getElementById("p1").innerHTML="Match result: draw";
+    document.getElementById("p1").style.fontSize = "xx-large";
+  }
+   else if(a == 1)
+  {
+    document.getElementById("op").src="paper.png";
+
+    document.getElementById("p1").innerHTML="Match result: lose";
+    document.getElementById("p1").style.fontSize = "xx-large";
+
+  }
+  else if(a == 2)
+  {
+    document.getElementById("op").src="scissor.png";
+
+    document.getElementById("p1").innerHTML="Match result: win";
+    document.getElementById("p1").style.fontSize = "xx-large";
+  }
+}
+function paper()
+{
+  document.getElementById("us").src="paper.png"
+ var a = Math.floor(Math.random()*3);
+
+ if(a == 0)
+ {
+   document.getElementById("op").src="rock.png";
+
+   document.getElementById("p1").innerHTML="Match result: win";
+   document.getElementById("p1").style.fontSize = "xx-large";
+ }
+ else if(a == 1)
+ {
+   document.getElementById("op").src="paper.png";
+
+   document.getElementById("p1").innerHTML="Match result: draw";
+   document.getElementById("p1").style.fontSize = "xx-large";
+ }
+ else if(a == 2)
+ {
+   document.getElementById("op").src="scissor.png";
+
+   document.getElementById("p1").innerHTML="Match result: lose";
+   document.getElementById("p1").style.fontSize = "xx-large";
+ }
+}
+function scissor()
+{
+  document.getElementById("us").src="scissor.png"
+ var a = Math.floor(Math.random()*3);
+ if(a == 0)
+ {
+   document.getElementById("op").src="rock.png";
+
+   document.getElementById("p1").innerHTML="Match result: lose";
+   document.getElementById("p1").style.fontSize = "xx-large";
+ }
+ else if(a == 1)
+ {
+   document.getElementById("op").src="paper.png";
+
+   document.getElementById("p1").innerHTML="Match result: win";
+   document.getElementById("p1").style.fontSize = "xx-large";
+ }
+ else if(a == 2)
+ {
+   document.getElementById("op").src="scissor.png";
+
+   document.getElementById("p1").innerHTML="Match result: draw";
+   document.getElementById("p1").style.fontSize = "xx-large";
+ }
+}
+</script>
+<style>
+body{
+min-height:100%;
+background-image: url(background.jpg);
+background-size: cover;
+backgroun-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+}
+</style>
+</head>
+<body>
+<center><h1><font color=#00ccff>ROCK PAPER SCISSOR</font></h1>
+  <font size=6 color=#ffcc00>Rules of the game</font>
+<br><br><br>
+<img src="rules.jpg" width=400 height=400 align=center></center>
+<center>
+<table width=70% align=center>
+  <tr align=center>
+    <th><font size=5>AI</font></th>
+    <td></td>
+    <td><font size=5><b>User</b></font></td>
+  </tr>
+ <tr align=center>
+   <td><img src="choose.png" height=300 width=300 id=op></td>
+   <td><img src="vs.gif"></td>
+   <td><img src="choose.png" height=300 width=300 id=us></td>
+ </tr>
+
+</table>
+</center>
+<br>
+<center>
+<table align=center cellpadding=20>
+  <tr align=center>
+    <td><button  onclick="rock()" style="padding: 20px 20px ; text-align: center;">Rock</button></td>
+    <td><button  onclick="paper()" style="padding: 20px 20px ; text-align: center;">paper</button></td>
+    <td><button  onclick="scissor()" style="padding: 20px 20px ; text-align: center;">scissor</button></td>
+  </center>
+</table>
+<p id=p1  onmouseover="five()" onmouseout="six()"><font size=6 color=#ff00ff>Match result:</font></p>
+</body>
+</html>
